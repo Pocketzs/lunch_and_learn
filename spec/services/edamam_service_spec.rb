@@ -18,6 +18,18 @@ RSpec.describe EdamamService do
           expect(h[:recipe][:image]).to be_a(String)
         end
       end
+
+      it 'returns an empty hits array if query is not given' do
+        response = EdamamService.recipe_search
+        expect(response[:hits]).to be_an(Array)
+        expect(response[:hits]).to be_empty
+      end
+
+      it 'returns an empty hits array if query is blank' do
+        response = EdamamService.recipe_search('')
+        expect(response[:hits]).to be_an(Array)
+        expect(response[:hits]).to be_empty
+      end
     end
   end
 end

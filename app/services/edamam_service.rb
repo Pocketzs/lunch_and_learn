@@ -1,5 +1,5 @@
 class EdamamService
-  def self.recipe_search(query)
+  def self.recipe_search(query = nil)
     response = conn.get(nil, { q: query })
     parse_json(response)
   end
