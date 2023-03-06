@@ -44,7 +44,10 @@ RSpec.describe 'Recipes API' do
 
     describe 'no country param supplied' do
       it 'returns an array of recipes with a random country supplied' do
+        allow(CountryFacade).to receive(:name_sample).and_return('Myanmar')
+
         get "/api/v1/recipes"
+        # require 'pry'; binding.pry
       end
     end
   end
