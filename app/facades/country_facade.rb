@@ -13,4 +13,9 @@ class CountryFacade
   def self.name_sample(names)
     names.sample
   end
+
+  def self.capital_lat_lng(country_name)
+    country = CountryService.country_by_name(country_name)
+    country[0][:capitalInfo][:latlng]
+  end
 end
