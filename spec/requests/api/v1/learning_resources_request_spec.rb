@@ -39,6 +39,34 @@ RSpec.describe "Learning Resources Api" do
           expect(image[:url]).to be_a(String)
         end
       end
+
+      it 'handles no images or videos being found given query' do
+        get '/api/v1/learning_resources?country=lioausjhdfopiuashdf'
+
+        expect(response.status).to eq 200
+        expect(response).to be_successful
+        resource = JSON.parse(response.body, symbolize_names: true)
+
+        expect(resource).to be_a(Hash)
+        expect(resource).to have_key(:data)
+        expect(resource[:data]).to be_a(Hash)
+        expect(resource[:data]).to have_key(:id)
+        expect(resource[:data]).to have_key(:type)
+        expect(resource[:data]).to have_key(:attributes)
+        expect(resource[:data][:id]).to be_nil
+        expect(resource[:data][:type]).to eq('learning_resource')
+        expect(resource[:data][:attributes]).to be_a(Hash)
+        expect(resource[:data][:attributes]).to have_key(:country)
+        expect(resource[:data][:attributes]).to have_key(:video)
+        expect(resource[:data][:attributes]).to have_key(:images)
+        expect(resource[:data][:attributes][:country]).to eq('lioausjhdfopiuashdf')
+        expect(resource[:data][:attributes][:video]).to be_a(Hash)
+        expect(resource[:data][:attributes][:images]).to be_a(Array)
+        
+        expect(resource[:data][:attributes][:video]).to eq({})
+        
+        expect(resource[:data][:attributes][:images]).to eq([])
+      end
     end
   end
 end
