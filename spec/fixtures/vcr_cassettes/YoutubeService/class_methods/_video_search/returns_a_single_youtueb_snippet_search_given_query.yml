@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyDJIjM3A78BKhpNU7aZw5irg2EoltXGF-c&maxResults=1&part=snippet&q=thailand%20cuisine%20history&type=video
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Tue, 07 Mar 2023 02:16:59 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "kind": "youtube#searchListResponse",
+          "etag": "9JlFi_7XxOM8q8xpDyq7_JlEU9Y",
+          "nextPageToken": "CAEQAA",
+          "regionCode": "US",
+          "pageInfo": {
+            "totalResults": 1000000,
+            "resultsPerPage": 1
+          },
+          "items": [
+            {
+              "kind": "youtube#searchResult",
+              "etag": "E336lIH2gA3l8TtLq_fKFNPEmC4",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "Oe3LCcDS-Uw"
+              },
+              "snippet": {
+                "publishedAt": "2021-05-08T17:16:36Z",
+                "channelId": "UCyEA3vUnlpg0xzkECEq1rOA",
+                "title": "The Dirty History of Thai Food",
+                "description": "Pad Thai is not what you think... Thank you Surfshark for sponsoring this video. Go tohttps://surfshark.deals/ANDONG and enter ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/Oe3LCcDS-Uw/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/Oe3LCcDS-Uw/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/Oe3LCcDS-Uw/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "My Name Is Andong",
+                "liveBroadcastContent": "none",
+                "publishTime": "2021-05-08T17:16:36Z"
+              }
+            }
+          ]
+        }
+  recorded_at: Tue, 07 Mar 2023 02:16:59 GMT
+recorded_with: VCR 6.1.0
