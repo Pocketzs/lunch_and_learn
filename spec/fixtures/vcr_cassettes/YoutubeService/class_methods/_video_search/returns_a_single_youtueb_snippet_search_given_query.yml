@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyDJIjM3A78BKhpNU7aZw5irg2EoltXGF-c&maxResults=1&part=snippet&q=thailand%20cuisine%20history&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=<youtube_api_key>&maxResults=1&part=snippet&q=thailand%20cuisine%20history&type=video
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Tue, 07 Mar 2023 02:16:59 GMT
+      - Wed, 08 Mar 2023 02:54:34 GMT
       Server:
       - scaffolding on HTTPServer2
       Cache-Control:
@@ -89,5 +89,5 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Tue, 07 Mar 2023 02:16:59 GMT
+  recorded_at: Wed, 08 Mar 2023 02:54:34 GMT
 recorded_with: VCR 6.1.0
