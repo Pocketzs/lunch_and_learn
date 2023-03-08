@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe YoutubeService do
   describe 'class methods' do
     describe '.video_search', :vcr do
-      it 'returns a single youtueb snippet search given query' do
+      it 'returns a single youtube snippet search given query' do
         data = YoutubeService.video_search('thailand')
         expect(data).to have_key(:items)
         expect(data[:items]).to be_an(Array)
